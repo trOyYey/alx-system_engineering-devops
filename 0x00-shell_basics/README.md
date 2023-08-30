@@ -1,0 +1,1 @@
+script containting whole pathway
