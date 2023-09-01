@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -h --reference=vincent _hello
+chown -h vincent:staff _hello
