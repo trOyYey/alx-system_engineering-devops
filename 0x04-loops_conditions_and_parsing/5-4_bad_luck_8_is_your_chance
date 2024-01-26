@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# print on terminal hello school ten times
+
+i=10
+while [ $i -ne "0" ]; do
+	((i--))
+	if [ $i -eq "6" ]
+	then
+		echo "bad luck"
+	elif [ $i -eq "2" ]
+	then
+		echo "good work"
+	else
+		echo "Best School"
+	fi
+done
