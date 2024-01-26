@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# print on terminal hello school ten times
+
+i=10
+while [ $i -ne "0" ]; do
+	echo "Best School"
+	((i--))
+	if [ $i -eq "1" ]
+	then
+		echo "Hi"
+	fi
+done
