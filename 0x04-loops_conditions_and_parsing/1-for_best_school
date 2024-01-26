@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # print in screen hello school ten times
 
-for i in {0..9}; do
+counter=0
+for i in {1..10}; do
 	echo "Best School"
+	(counter+=$i)
 done
