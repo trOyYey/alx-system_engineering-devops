@@ -9,7 +9,7 @@ while [ $i -ne "0" ]; do
 		echo "bad luck"
 	elif [ $i -eq "2" ]
 	then
-		echo "good work"
+		echo "good luck"
 	else
 		echo "Best School"
 	fi
