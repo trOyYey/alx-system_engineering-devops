@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# wish.com/ls.
+
+for letter in *
+do
+    echo "$letter" | cut -d'-' -f2
+done
