@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# print helloo school 10 times
+
+i=10
+until [ $i -eq "0" ]; do
+	(( i-- ))
+	echo "Best School"
+done
