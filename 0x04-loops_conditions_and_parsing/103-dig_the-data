@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# get field 1,9, which are ip and code, sort into uniq into sort numerical into reverse.
+
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -nr
