@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# effecient way of murdur !
+
+pkill -f "4-to_infinity_and_beyond"
