@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# never ending for loop
+
+for (( ; ; )); do
+    echo "To infinity and beyond"
+    sleep 2
+done
