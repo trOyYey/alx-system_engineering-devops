@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displaying process containing bash without using pgrep
+
+ps a u f x | grep bash
