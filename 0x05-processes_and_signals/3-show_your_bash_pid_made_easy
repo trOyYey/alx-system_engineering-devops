@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displaying process ID with editional name info
+
+pgrep -l bash
