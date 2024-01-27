@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that displays running process information
+
+ps a u f x
