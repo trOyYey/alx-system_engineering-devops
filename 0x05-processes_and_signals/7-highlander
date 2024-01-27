@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# neverending invisibility ? Yes : No
+
+function ROAR {
+    echo "I am invincible!!!"
+}
+
+trap ROAR SIGTERM
+for (( ; ; )); do
+	echo "To infinity and beyond"
+	sleep "2"
+done
