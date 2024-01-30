@@ -2,11 +2,11 @@
 # neverending loop reacting with signals
 
 function murdur_message {
-    echo "I hate the kill command"
-	clean_up
+	echo "I hate the kill command"
+	erase_evidence
 }
 function meme_message {
-    echo "Y U no love me?!"
+	echo "Y U no love me?!"
 }
 
 function erase_evidence {
