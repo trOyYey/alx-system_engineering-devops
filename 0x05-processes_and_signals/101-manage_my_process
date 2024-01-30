@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# admision of start stop and restart
+
+function start_process {
+	./manage_my_process &
+	echo "$!" > "/var/run/my_process.pid"
+	echo "manage_my_process started"
+}
+
+function stop_process {
+	procID="$(cat /var/run/my_process.pid)"
+	kill "$procID"
+	rm "/var/run/my_process.pid"
+	echo "manage_my_process stopped"
+}
+
+function restart_process {
+	procID="$(cat /var/run/my_process.pid)"
+	kill "$procID"
+	rm "/var/run/my_process.pid"
+	./manage_my_process &
+	echo "$!" > "/var/run/my_process.pid"
+	echo "manage_my_process restarted"
+}
+
+case $1 in
+	"start")
+		start_process
+		;;
+	"stop")
+		stop_process
+		;;
+	"restart")
+		restart_process
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
