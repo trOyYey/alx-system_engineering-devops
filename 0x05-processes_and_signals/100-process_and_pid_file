@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# neverending loop reacting with signals
+
+function murdur_message {
+    echo "I hate the kill command"
+	clean_up
+}
+function meme_message {
+    echo "Y U no love me?!"
+}
+
+function rerase_evidence {
+	rm "/var/run/myscript.pid"
+	exit
+}
+
+trap murdur_message SIGTERM
+trap meme_message SIGINT
+trap erase_evidence SIGQUIT
+
+echo $$ > "/var/run/myscript.pid"
+for (( ; ; )); do
+	echo "To infinity and beyond"
+	sleep "2"
+done
