@@ -9,7 +9,7 @@ function meme_message {
     echo "Y U no love me?!"
 }
 
-function rerase_evidence {
+function erase_evidence {
 	rm "/var/run/myscript.pid"
 	exit
 }
