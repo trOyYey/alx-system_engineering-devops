@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# ping the IP address passed in as an argument 5 times 
+
+if (( $# == 0 )); then
+	script_name="${0:2}"
+	echo "Usage: $script_name {IP_ADDRESS}"
+else
+	ping -c 5 "$1"
+fi

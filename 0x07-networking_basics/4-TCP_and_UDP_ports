@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays list of information  with --listinng and --program modifieer
+
+netstat -l -p
