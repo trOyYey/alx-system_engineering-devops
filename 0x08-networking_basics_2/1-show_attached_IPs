@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prints all connected ipv4 on the current machine
+
+ifconfig | grep inet\ | cut -f10 -d " "
