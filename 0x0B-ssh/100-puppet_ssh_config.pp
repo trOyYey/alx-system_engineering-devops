@@ -1,13 +1,15 @@
-# set up config file so the server does not accept password auth
-file_line { 'Turn off password auth':
+# remove password authentication
+include stdlib
+
+file_line { 'Turn off passwd auth':
   ensure => 'present',
-  path => '~/.ssh/config',
+  path => '/etc/ssh/ssh_config',
   line => 'PasswordAuthentication no',
 }
 
-# make the default identity file to shool if its not the case
-file_line { 'Declare IdentityFile':
-  ensure => 'present',
-  path   => '~/.ssh/config',
+# use the private key in school file as default method for ssh
+file_line { 'Declare identity file':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
   line   => 'IdentityFile ~/.ssh/school',
 }
