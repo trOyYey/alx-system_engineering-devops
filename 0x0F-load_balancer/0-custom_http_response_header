@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# usable script for multiple servers
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+name=$(hostname)
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html
+echo "
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+	add_header X-Served-By $name always;
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+        server_name troy-yey.tech;
+	error_page 404 /error_404.html;
+
+	location = /error_404.html {
+		root /var/www/html;
+		internal;
+	}
+
+	location /redirect_me {
+                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+}" | sudo tee /etc/nginx/sites-available/default
+sudo service nginx restart
