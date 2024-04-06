@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#script that displays information about domain and subdomain
+
+
+get_info () {
+	Record=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
+	IP=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
+	echo "The subdomain $2 is a $Record record and points to $IP"
+}
+
+if [ "$#" = 1 ]
+then
+    index=0
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    while [ $index -lt ${#subdomains[@]} ];
+    do
+		name=${subdomains[index]}
+		get_info "$1" "$name"
+		((index++))
+    done
+else
+	get_info "$1" "$2"
+fi
