@@ -2,9 +2,10 @@
 """
     gather data from API script
 """
+import csv
 import requests as RQ
 from sys import argv
-import csv
+
 
 if __name__ == "__main__":
     id = argv[1]
