@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# back up mysql database
+mysqldump --all-databases -u root --password="$1" > backup.sql
+timet=$(date +"%d-%m-%y.tar.gz")
+tar -czf "$timet" backup.sql
