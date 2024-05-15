@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#using nginx user run ngninx and let it listen to port 8080 instead
+
+chmod 744 /etc/nginx/nginx.conf
+sudo sed -i "/user/c\user nginx;" /etc/nginx/nginx.conf
+sudo sed -i  -e "s/ 80 / 8080 /" -e "s/:80 /:8080 /" /etc/nginx/sites-available/default
+sudo pkill apache2
+sudo -u nginx service nginx restart
