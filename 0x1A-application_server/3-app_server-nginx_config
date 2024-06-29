@@ -1,0 +1,29 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        add_header X-Served-By 523707-web-01 always;
+
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+        server_name web-01.troy-yey.tech localhost 54.90.18.136 www.troy-yey.tech;
+        error_page 404 /error_404.html;
+
+        location = /error_404.html {
+                root /var/www/html;
+                internal;
+        }
+
+        location = /airbnb-onepage/ {
+                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+        }
+
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+        }
+
+        location /redirect_me {
+                return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+}
