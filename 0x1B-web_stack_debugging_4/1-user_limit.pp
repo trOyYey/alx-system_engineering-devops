@@ -1,4 +1,4 @@
-# increase user limit
+# increase user cap
 
 # expand the limit
 exec {'increase limit':

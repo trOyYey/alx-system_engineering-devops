@@ -1,4 +1,4 @@
-# increase trafic limit to 4096
+# increase trafic limit to + 4096
 
 # inrease the maximum limit
 exec {'increase user limit':
